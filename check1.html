@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<title>LoginForm</title>
+</head>
+<body>
+<form method="POST" action="{{url_for('form')}}">
+        {{form.csrf_token}}<br><br>
+        {{form.sourceEntityId.label}}<br><br>
+        {{form.sourceEntityId}}<br><br>
+        <ul>
+        {% for error in form.sourceEntityId.errors %}
+           <li style="color:red;">{{ error}} </li>
+        {% endfor %}
+        </ul>
+
+        <input type="submit" value="submit">
+</form>
+</body>
+</html>
+
+
+
+
